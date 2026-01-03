@@ -1,0 +1,123 @@
+.page {
+  min-height: 100vh;
+  background: #0b0c10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 540px;
+  background: #11131a;
+  border: 1px solid #1f2330;
+  padding: 22px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.header h1 {
+  margin: 0 0 6px;
+}
+
+.muted {
+  margin: 0 0 14px;
+  color: #a9b2c3;
+}
+
+.questions {
+  display: grid;
+  gap: 12px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.score {
+  color: #a9b2c3;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #2d6bff;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #1f57e0;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+
+/* Um "container" para alinhar tudo (logo, progress, card) */
+.shell {
+  width: 100%;
+  max-width: 540px;
+}
+
+/* Header de marca (fora do card) */
+.brandHeader {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.brandLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #0e1016;
+  border: 1px solid #1f2330;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  line-height: 1;
+  color: #e9eef5;
+  user-select: none;
+}
+
+.brandText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.brandTitle {
+  font-size: 16px;
+  font-weight: 800;
+  color: #e9eef5;
+}
+
+.brandSlogan {
+  font-size: 13px;
+  color: #a9b2c3;
+}

@@ -1,0 +1,38 @@
+.q-card {
+  padding: 14px;
+  /* border: 1px solid #1f2330; */
+  /* border-radius: 14px; */
+  /* background: #0e1016; */
+}
+
+.q-text {
+  font-weight: 650;
+  margin-bottom: 10px;
+}
+
+.q-scale {
+  display: grid;
+  align-items: center;
+  gap: 10px;
+}
+
+.q-label {
+  display: flex;
+  justify-content: space-between;
+  color: #a9b2c3;
+  font-size: 12px;
+}
+
+.q-range {
+  width: 100%;
+}
+
+.q-value {
+  text-align: right;
+}
+
+.q-hint {
+  margin-top: 6px;
+  color: #a9b2c3;
+  font-size: 12px;
+}
