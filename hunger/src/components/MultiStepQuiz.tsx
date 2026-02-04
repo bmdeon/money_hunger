@@ -1,4 +1,5 @@
-import { useMemo, useState } from "react";
+// import { useMemo, useState } from "react";
+import { useState } from "react";
 import type { StepId } from "../data/questions";
 import { STEPS } from "../data/questions";
 import { IntroScreen } from "./IntroScreen";
@@ -26,15 +27,15 @@ export function MultiStepQuiz() {
   const isFinished = stepIndex >= STEPS.length;
   const currentStep = STEPS[stepIndex];
 
-  const totals = useMemo(() => {
-    const sum = (arr: number[]) => arr.reduce((a, b) => a + b, 0);
-    return {
-      brain: sum(answersByStep.brain),
-      gut: sum(answersByStep.gut),
-      emotional: sum(answersByStep.emotional),
-      slow: sum(answersByStep.slow),
-    };
-  }, [answersByStep]);
+  // const totals = useMemo(() => {
+  //   const sum = (arr: number[]) => arr.reduce((a, b) => a + b, 0);
+  //   return {
+  //     brain: sum(answersByStep.brain),
+  //     gut: sum(answersByStep.gut),
+  //     emotional: sum(answersByStep.emotional),
+  //     slow: sum(answersByStep.slow),
+  //   };
+  // }, [answersByStep]);
 
   function updateStepAnswers(stepId: StepId, newAnswers: number[]) {
     setAnswersByStep((prev) => ({ ...prev, [stepId]: newAnswers }));
@@ -48,11 +49,11 @@ export function MultiStepQuiz() {
     setStepIndex((s) => Math.max(s - 1, 0));
   }
 
-  function reset() {
-    setAnswersByStep(makeInitialAnswers());
-    setStepIndex(0);
-    setStarted(false);
-  }
+  // function reset() {
+  //   setAnswersByStep(makeInitialAnswers());
+  //   setStepIndex(0);
+  //   setStarted(false);
+  // }
 
   // ✅ TELA ANTES DO QUIZ
   if (!started) {
