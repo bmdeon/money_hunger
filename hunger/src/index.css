@@ -12,3 +12,322 @@ body,
 body {
   margin: 0;
 }
+
+
+:root {
+  /* cores base */
+  --white-1: #ffffff;
+  --white-2: #f4f6fa;
+  --white-3: #e3e7ef;
+
+  --black-1: #000000;
+  --black-2: #0a0c11;
+  --black-3: #1a1f2b;
+  
+
+  /* “cor 1/2/3” (nomeie como função depois) */
+  /* --c-primary: #23a997; */
+  --c-primary: #2d8686;
+  --c-secondary: #2d8686;
+  
+  /* cores de texto secundário */
+  --c-text: #000000;
+  --c-muted: #a1a1a1;
+
+  /* bordas/linhas (se quiser voltar com border) */
+  --c-border: #1f2330;
+
+  /* radius */
+  --r-sm: 10px;
+  --r-md: 12px;
+  --r-lg: 16px;
+
+  /* espaçamentos */
+  --s-1: 6px;
+  --s-2: 10px;
+  --s-3: 14px;
+  --s-4: 16px;
+  --s-5: 22px;
+  --s-6: 24px;
+
+  /* sombras */
+  --shadow-card: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+  /* tipografia */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+
+
+/* ===== Intro Screen ===== */
+
+.intro {
+  width: 100%;
+  min-height: 100%;
+  padding: var(--s-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--s-5);
+
+  color: var(--c-text);
+  font-family: var(--font-sans);
+
+  /* se o resto do app usa fundo claro, fica consistente */
+  background: var(--white-3);
+}
+
+.intro__title {
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+
+  /* BEM GRANDE, mas respeitando responsivo */
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 800;
+  color: var(--black-2);
+  max-width: 18ch;
+}
+
+.btn-primary {
+  border: 0;
+  cursor: pointer;
+
+  padding: 14px 22px;
+  border-radius: var(--r-md);
+
+  background: var(--c-primary);
+  color: var(--white-1);
+
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.08s ease, filter 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.intro__video {
+  width: 100%;
+  max-width: 920px;
+
+  /* 16:9 */
+  aspect-ratio: 16 / 9;
+
+  border-radius: var(--r-lg);
+  overflow: hidden;
+
+  background: var(--white-2);
+  box-shadow: var(--shadow-card);
+}
+
+.intro__video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+
+/* ===== Final Screen ===== */
+
+.finalCard {
+  width: 100%;
+  max-width: 760px;
+  margin: var(--s-6) auto 0;
+
+  padding: calc(var(--s-6) * 1.2);
+
+  background: color-mix(in srgb, var(--c-primary), white 70%);
+  border-radius: var(--r-lg);
+
+  text-align: center;
+}
+
+.finalCardIcon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto var(--s-3);
+
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c-primary), white 55%);
+  color: var(--c-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.finalCardTitle {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--black-2);
+}
+
+.finalCardText {
+  margin-top: var(--s-2);
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--black-2), white 40%);
+  line-height: 1.4;
+}
+
+
+/* ===== Diagnostic Card ===== */
+
+.diagnosticCard {
+  width: 100%;
+  max-width: 760px;
+  margin: var(--s-6) auto 0;
+
+  background: var(--white-1);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+
+  border: 1px solid color-mix(in srgb, var(--black-2), white 88%);
+}
+
+/* Header verde */
+.diagnosticHeader {
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--c-primary), white 5%),
+    color-mix(in srgb, var(--c-primary), black 10%)
+  );
+  padding: var(--s-6);
+  text-align: center;
+  color: var(--white-1);
+}
+
+.diagnosticBadge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: var(--s-3);
+}
+
+.diagnosticTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+/* Corpo */
+.diagnosticBody {
+  padding: var(--s-6);
+}
+
+.diagnosticText {
+  margin: 0 0 var(--s-5);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: color-mix(in srgb, var(--black-2), white 40%);
+}
+
+.diagnosticSectionTitle {
+  font-weight: 800;
+  margin-bottom: var(--s-3);
+  color: var(--black-2);
+}
+
+/* Lista */
+.diagnosticList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s-5);
+  display: grid;
+  gap: var(--s-3);
+}
+
+.diagnosticList li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--black-2), white 35%);
+}
+
+/* Meta */
+.diagnosticMeta {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-5);
+  font-size: 0.85rem;
+  color: color-mix(in srgb, var(--black-2), white 45%);
+  padding: var(--s-4) 0;
+  border-top: 1px solid color-mix(in srgb, var(--black-2), white 88%);
+}
+
+/* Preço */
+.diagnosticPrice {
+  text-align: center;
+  margin: var(--s-5) 0 var(--s-4);
+}
+
+.diagnosticOldPrice {
+  display: block;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+  color: color-mix(in srgb, var(--black-2), white 55%);
+}
+
+.diagnosticNewPrice {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--black-2);
+}
+
+/* CTA */
+.diagnosticCTA {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: var(--r-md);
+  cursor: pointer;
+
+  background: var(--c-primary);
+  color: var(--white-1);
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.diagnosticCTA:hover {
+  filter: brightness(1.05);
+}
+
+
+.diagnosticDivider {
+  width: 100%;
+  height: 1px;
+  background: color-mix(in srgb, var(--black-2), white 88%);
+  margin: 0;
+}

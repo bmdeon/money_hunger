@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import type { StepId } from "../data/questions";
 import { STEPS } from "../data/questions";
+import { IntroScreen } from "./IntroScreen";
 import { StepScreen } from "./StepScreen";
+import { FinalScreen } from "./FinalScreen";
 
 type AnswersByStep = Record<StepId, number[]>;
 
@@ -15,6 +17,7 @@ function makeInitialAnswers(): AnswersByStep {
 }
 
 export function MultiStepQuiz() {
+  const [started, setStarted] = useState(false);
   const [stepIndex, setStepIndex] = useState(0);
   const [answersByStep, setAnswersByStep] = useState<AnswersByStep>(
     makeInitialAnswers()
@@ -48,33 +51,27 @@ export function MultiStepQuiz() {
   function reset() {
     setAnswersByStep(makeInitialAnswers());
     setStepIndex(0);
+    setStarted(false);
+  }
+
+  // ✅ TELA ANTES DO QUIZ
+  if (!started) {
+    return (
+      <IntroScreen
+        title="Descubra seu tipo de fome em 2 minutos"
+        buttonText="Iniciar Quiz"
+        youtubeId="HpC9yb3fEOo"
+        onStart={() => setStarted(true)}
+      />
+    );
   }
 
   if (isFinished) {
-    return (
-      <div 
-          style={{
-      padding: 24,
-      color: "#000000ff",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      alignContent: "space-around",
-      //  padding: 24px;
-    // color: #000000;
-    // flex-direction: column;
-    // align-content: space-around;
-    // align-items: center;
+    // if (totals.brain > 20) {
 
-      }}>
-        <h2>Você é asdadfs!</h2>
-        <p>Totais (por enquanto):</p>
-        <pre style={{ whiteSpace: "pre-wrap" }}>{JSON.stringify(totals, null, 2)}</pre>
-
-        <button onClick={reset}>Recomeçar</button>
-      </div>
-    );
-  }
+  // if (!started) {
+    return <FinalScreen />;
+    }
 
   return (
     <StepScreen

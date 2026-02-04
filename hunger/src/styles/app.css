@@ -1,22 +1,23 @@
 .page {
   min-height: 100vh;
-  background: #0b0c10;
+  background: var(--white-3);
+
+  /* background: #ffffff; */
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--black-1);
+  font-family: var(--font-sans);
   padding: 24px;
 }
 
 .card {
   width: 100%;
   max-width: 540px;
-  background: #11131a;
-  border: 1px solid #1f2330;
+  background: var(--white-2);
   padding: 22px;
   border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-card);
 }
 
 .header h1 {
@@ -25,7 +26,7 @@
 
 .muted {
   margin: 0 0 14px;
-  color: #a9b2c3;
+  color: var(--c-muted);
 }
 
 .questions {
@@ -42,7 +43,7 @@
 }
 
 .score {
-  color: #a9b2c3;
+  color: var(--c-muted);
 }
 
 .buttonGroup {
@@ -54,14 +55,14 @@
   padding: 10px 14px;
   border-radius: 10px;
   border: none;
-  background: #2d6bff;
-  color: white;
+  background: var(--c-primary);
+  color: var(--white-1);
   font-weight: 700;
   cursor: pointer;
 }
 
 .button:hover {
-  background: #1f57e0;
+  background: var(--c-secondary);
 }
 
 .button:disabled {
@@ -95,13 +96,12 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: #0e1016;
-  border: 1px solid #1f2330;
+  background: var(--c-primary);
   display: grid;
   place-items: center;
   font-weight: 800;
   line-height: 1;
-  color: #e9eef5;
+  color: var(--white-1);
   user-select: none;
 }
 
@@ -114,10 +114,10 @@
 .brandTitle {
   font-size: 16px;
   font-weight: 800;
-  color: #e9eef5;
+  color: var(--black-1);
 }
 
 .brandSlogan {
   font-size: 13px;
-  color: #a9b2c3;
+  color: var(--c-muted);
 }

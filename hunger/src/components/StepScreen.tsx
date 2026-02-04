@@ -71,6 +71,7 @@ export function StepScreen({
             {step.questions.map((q, i) => (
               <QuestionCard
                 key={i}
+                index={i+1}
                 text={q}
                 value={answers[i]}
                 onChange={(v) => setAnswer(i, v)}

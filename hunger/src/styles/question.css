@@ -1,13 +1,22 @@
 .q-card {
   padding: 14px;
-  /* border: 1px solid #1f2330; */
-  /* border-radius: 14px; */
-  /* background: #0e1016; */
+}
+
+.q-row {
+  display: flex;
+  align-items: center;
+  gap: 12px; /* espaço entre index e texto */
+}
+
+.q-index {
+  font-weight: 650;
+  margin-bottom: 10px;
+  color: var(--c-primary);
 }
 
 .q-text {
-  font-weight: 650;
   margin-bottom: 10px;
+  color: var(--black-1);
 }
 
 .q-scale {
@@ -19,7 +28,7 @@
 .q-label {
   display: flex;
   justify-content: space-between;
-  color: #a9b2c3;
+  color: var(--c-muted);
   font-size: 12px;
 }
 
@@ -31,8 +40,15 @@
   text-align: right;
 }
 
-.q-hint {
+/* .q-hint {
   margin-top: 6px;
-  color: #a9b2c3;
+  color: #1548a8;
   font-size: 12px;
+} */
+
+
+.q-range {
+  width: 100%;
+  accent-color: var(--c-primary);
+  cursor: pointer;
 }

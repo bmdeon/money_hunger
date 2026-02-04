@@ -6,20 +6,22 @@
   display: flex;
   justify-content: space-between;
   font-size: 13px;
-  color: #a9b2c3;
+  color: var(--c-muted);
   margin-bottom: 6px;
 }
 
 .progress-bar {
   height: 8px;
-  background: #20263a;
+  background: var(--white-2);
   border-radius: 999px;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--c-border) 40%, transparent);
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
-  background: #2d6bff;
+  background: var(--c-primary);
   border-radius: 999px;
   transition: width 0.25s ease;
 }
